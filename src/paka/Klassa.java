@@ -84,5 +84,23 @@ public class Klassa {
 
     }
 
+	public void processAnswer(String answer) {         
+        char newCharacter = answer.charAt(0);
+
+       
+        String nextGuess    = "";
+        boolean foundAMatch = false;
+        for( int i=0; i<targetWord.length(); i++ ) {
+            char characterToMatch = targetWord.charAt(i);
+            if( characterToMatch == newCharacter ) {
+                nextGuess = nextGuess.concat( String.valueOf(newCharacter) );
+                foundAMatch = true;
+            }
+            else {
+                nextGuess = nextGuess.concat(String.valueOf
+                                                   ( currentGuess.charAt(i) ));
+            }
+        }
+
 
 }
